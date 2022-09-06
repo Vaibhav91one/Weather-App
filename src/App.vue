@@ -10,6 +10,7 @@ export default {
     };
   },
   methods: {
+
     fetchWeather(e) {
       if (e.key == "Enter") {
         fetch(
@@ -63,13 +64,7 @@ export default {
   <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
     <main>
       <div class="search-box">
-        <input
-          type="text"
-          class="search-bar"
-          placeholder="Search.."
-          v-model="query"
-          @keypress="fetchWeather"
-        />
+        <input type="text" class="search-bar" placeholder="Search.." v-model="query" @keypress="fetchWeather" />
       </div>
       <div class="weather-info" v-if="typeof weather.main != 'undefined'">
         <div class="weather-info-1">
@@ -120,21 +115,27 @@ export default {
   0% {
     filter: grayscale(0);
   }
+
   20% {
     filter: grayscale(0.2);
   }
+
   40% {
     filter: grayscale(0.4);
   }
+
   50% {
     filter: grayscale(0.6);
   }
+
   60% {
     filter: grayscale(0.4);
   }
+
   80% {
     filter: grayscale(0.2);
   }
+
   100% {
     filter: grayscale(0);
   }
@@ -145,18 +146,23 @@ export default {
   0% {
     transform: translateY(-100%) scaleY(0);
   }
+
   20% {
     opacity: 0.2;
   }
+
   40% {
     opacity: 0.4;
   }
+
   60% {
     opacity: 0.6;
   }
+
   80% {
     opacity: 0.8;
   }
+
   100% {
     transform: translateY(0%) scaleY(1);
     opacity: 1;
@@ -213,6 +219,7 @@ main {
   animation: Load3 0.4s ease-in-out;
   margin-right: 10px;
 }
+
 @keyframes Load3 {
   0% {
     opacity: 0;
