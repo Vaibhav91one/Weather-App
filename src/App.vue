@@ -1,9 +1,9 @@
 <script>
 export default {
   name: "app",
-  created(){
-        document.title = "FinalWeather";
-    },
+  created() {
+    document.title = "FinalWeather";
+  },
   data() {
     return {
       api_key: "e2c7037bc8921aa48f99573aec194032",
@@ -27,6 +27,10 @@ export default {
     },
     setResults(results) {
       this.weather = results;
+      if (this.weather.cod == "404") {
+        console.log("City not found")
+        alert("City not found")
+      }
     },
     dateBuilder() {
       let d = new Date();
