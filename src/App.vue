@@ -1,6 +1,9 @@
 <script>
 export default {
   name: "app",
+  created(){
+        document.title = "FinalWeather";
+    },
   data() {
     return {
       api_key: "e2c7037bc8921aa48f99573aec194032",
@@ -59,6 +62,8 @@ export default {
   },
 };
 </script>
+
+
 
 <template>
   <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
